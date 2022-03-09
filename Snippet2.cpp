@@ -5,7 +5,7 @@ class X{
 		X() {
 			//cout<<"Default constructor of base class!! \n";
 		}
-		void print() {
+		virtual void print() {
 			cout<<"Base class \n";
 		}
 };
@@ -20,7 +20,12 @@ class Y:public X{
 };
 
 int main() {
-	X x1;
-	Y y1;
-	y1.print();
+ 
+	Y y1;   // Derived class object
+	X* ptr; //Base class pointer holding the derived class object
+	ptr=&y1;
+	ptr->print();
 }
+
+// o/p : without virtual function : Base class
+        // with  virtual function : Derived class
